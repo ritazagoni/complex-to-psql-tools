@@ -1,7 +1,7 @@
 complex-to-psql-tools
 =====================
 
-Provides Complex-data specific tools:
+Provides some Complex-data specific tools (raw -> consistent -> Postgresql):
 
 - `drop-invalid-dates comma,separated,date,fields input.csv output.csv`
   converts `date` fields to Python dates, fields failing to convert are replaced with None/null
