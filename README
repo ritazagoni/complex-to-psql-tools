@@ -1,0 +1,14 @@
+complex-to-psql-tools
+=====================
+
+Provides Complex-data specific tools:
+
+- `drop-invalid-dates comma,separated,date,fields input.csv output.csv`
+  converts `date` fields to Python dates, fields failing to convert are replaced with None/null
+- `generate-date-fixer R_export.txt.xls`
+  generate a script suitable for `parallel --gnu` that will create fixed rovat csvs when run
+- `create-table-fields R_export.txt.xls`
+  creates `rovat_n.fields` files to be used by `csv_to_psql`
+- `rovat-to-psql rovat_n.csv rovat_n.fields`
+  helps loading `rovat_n.csv` properly into Postgres (uses `csv_to_psql`)
+  creates table with correct field types and primary key on (`ceg_id`, `alrovat_id`)
